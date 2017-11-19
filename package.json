@@ -1,13 +1,13 @@
 {
-  "name": "zazu-template",
+  "name": "zazu-kitty",
   "version": "1.0.0",
-  "description": "Zazu Template for starting your own plugin.",
+  "description": "Zazu plugin that provides KiTTy sessions.",
   "main": "zazu.js",
   "scripts": {
     "lint": "eslint .",
     "test": "mocha ./test"
   },
-  "license": "Unlicense",
+  "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
     "eslint": "^3.13.0",
