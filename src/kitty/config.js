@@ -52,7 +52,6 @@ module.exports = (pluginContext, env) => {
 	if (config.filter === undefined) {
 		config.filter = /^[^.]/;
 	} else {
-		pluginContext.console.log('info', 'Filter');
 		config.filter = new RegExp(config.filter);
 	}
 
