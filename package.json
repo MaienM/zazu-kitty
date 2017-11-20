@@ -1,7 +1,7 @@
 {
-  "name": "zazu-kitty",
+  "name": "zazu-ssh",
   "version": "1.0.0",
-  "description": "Zazu plugin that provides KiTTy sessions.",
+  "description": "Zazu plugin that starts ssh sessions.",
   "main": "zazu.js",
   "scripts": {
     "lint": "eslint .",

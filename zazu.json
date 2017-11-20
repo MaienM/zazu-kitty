@@ -1,44 +1,24 @@
 {
-  "name": "zazu-kitty",
+  "name": "zazu-ssh",
   "version": "1.0.0",
-  "description": "Zazu plugin that provides KiTTy sessions for starting your own plugin.",
+  "description": "Zazu plugin that makes it easy to run ssh sessions.",
   "blocks": {
     "input": [
       {
-        "id": "template",
-        "type": "Keyword",
-        "keyword": "template",
-        "title": "Zazu Template",
-        "subtitle": "Goto Zazu Template GitHub Repo",
-        "icon": "fa-files-o",
-        "connections": [
-          "GoHome"
-        ]
-      },
-      {
-        "id": "hello",
-        "type": "Keyword",
-        "keyword": "hello",
-        "title": "Hello!",
-        "subtitle": "Please type your name!",
-        "icon": "fa-hand-spock-o",
-        "connections": ["GoHome"]
-      },
-      {
-        "id": "hello-name",
+        "id": "ssh",
         "type": "PrefixScript",
-        "prefix": "hello",
+        "prefix": "ssh",
         "space": true,
         "args": "Required",
-        "script": "src/hello.js",
-        "connections": ["GoHome"]
+        "script": "src/search.js",
+        "connections": ["run"]
       }
     ],
     "output": [
       {
-        "id": "GoHome",
-        "type": "OpenInBrowser",
-        "url": "https://github.com/tinytacoteam/zazu-template"
+        "id": "run",
+        "type": "UserScript",
+        "script": "src/run.js"
       }
     ]
   }
