@@ -14,7 +14,7 @@ module.exports = (pluginContext) => (val, env) => {
 			(err ? reject(err) : resolve(files))
 		)
 	).then((files) => files
-		.filter((file) => conf.displayHidden || file.indexOf('.') !== 0)
+		.filter((file) => conf.filter.test(file))
 		.filter((file) => file.toLowerCase().indexOf(val.toLowerCase()) >= 0)
 		.map((file) => ({
 			id: file,

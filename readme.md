@@ -29,7 +29,7 @@ The format of `KITTY_CONFIG` is as follows:
 {
 	"path": "C:\\path\\to\\kitty.exe",
 	"sessions": "C:\\path\\to\\sessions",
-	"displayHidden": false,
+	"filter": "^[^.]"
 }
 ```
 
@@ -41,6 +41,6 @@ this option, using defaults for everything else.
 is not specified, the sessions are assumed to be in a folder named `sessions`
 in the same directory as `path`.
 
-`displayHidden` determines whether files starting with a period (`.`) should be
-displayed. This defaults to false.
+`filter` is a regular expression to filter which session files should be
+displayed. Default is to exclude files starting with a period (`.`).
 

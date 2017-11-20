@@ -18,6 +18,7 @@ module.exports = (pluginContext, env) => {
 	} else if (typeof input === 'object') {
 		config.path = input.path;
 		config.sessions = input.sessions;
+		config.filter = input.filter;
 	} else {
 		config.path = input;
 	}
@@ -47,9 +48,12 @@ module.exports = (pluginContext, env) => {
 		return null;
 	}
 
-	// Defaults for other options
-	if (config.showHidden === undefined) {
-		config.showHidden = false;
+	// Default filter to filter out hidden files
+	if (config.filter === undefined) {
+		config.filter = /^[^.]/;
+	} else {
+		pluginContext.console.log('info', 'Filter');
+		config.filter = new RegExp(config.filter);
 	}
 
 	return config;
